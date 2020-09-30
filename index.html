@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input  class="form-control" id="generatePinNumber" type="text" value="" placeholder="____">
+                    <button class="generate-btn" onClick="pinGenerator()">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input class="form-control" id="outputNumber" type="text" value="" placeholder="____">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                                <div class="button" onclick="getValue('7')">7</div>
+                                <div class="button" onclick="getValue('8')">8</div>
+                                <div class="button" onclick="getValue('9')">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button" onclick="getValue('4')">4</div>
+                                <div class="button" onclick="getValue('5')">5</div>
+                                <div class="button" onclick="getValue('6')">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button" onclick="getValue('1')">1</div>
+                                <div class="button" onclick="getValue('2')">2</div>
+                                <div class="button" onclick="getValue('3')">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button" onclick="getValue('<')"><</div>
+                                <div class="button" onclick="getValue('0')">0</div>
+                                <div class="button" onclick="getValue('C')">C</div>
+                            </div>
+                            <div>
+                                <button onclick="submitted()" type="submit" id='submit-btn' class="submit-btn">Submit</button>
+                                <p class="action-left"><span id="iteration">3</span> try left</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notify-section">
+            <p class="notify" id="failed">❌ Pin Didn't Match, Please try again</p>
+            <p class="notify" id="success">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
